@@ -2,10 +2,10 @@
 
 # Hardcoded values
 TEST_CASE_DIR="./samples-A2"
-question="A2"
+SOLUTION="A2"
 
 # Compile the C++ program
-g++ "$question.cpp" -o "$question"
+g++ "$SOLUTION.cpp" -o "$SOLUTION"
 
 # Run the compiled program for each test case
 for input_file in "$TEST_CASE_DIR"/*.in; do
@@ -13,7 +13,7 @@ for input_file in "$TEST_CASE_DIR"/*.in; do
     expected_output_file="$TEST_CASE_DIR/$base_name.ans"
 
     # Run the program and compare output
-    output=$("./$question" < "$input_file")
+    output=$("./$SOLUTION" < "$input_file")
     expected_output=$(cat "$expected_output_file")
 
     if [[ "$output" == "$expected_output" ]]; then
